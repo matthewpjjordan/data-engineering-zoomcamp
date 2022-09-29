@@ -32,7 +32,7 @@ we created in the videos.
 
 What should be the start date for this dag?
 
-* 2019-01-01
+* 2019-01-01 x
 * 2020-01-01
 * 2021-01-01
 * days_ago(1)
@@ -43,7 +43,7 @@ What should be the start date for this dag?
 How often do we need to run this DAG?
 
 * Daily
-* Monthly
+* Monthly x
 * Yearly
 * Once
 
@@ -77,7 +77,7 @@ rm name-of-csv-file.csv name-of-parquet-file.parquet
 
 ## Question 3: DAG for FHV Data (2 points)
 
-Now create another DAG - for uploading the FHV data. 
+NowD create another AG - for uploading the FHV data. 
 
 We will need three steps: 
 
@@ -114,7 +114,7 @@ How often does it need to run?
 * Daily
 * Monthly
 * Yearly
-* Once
+* Once x
 
 
 ## Submitting the solutions
