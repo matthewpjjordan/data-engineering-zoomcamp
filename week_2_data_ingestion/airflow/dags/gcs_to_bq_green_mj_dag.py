@@ -19,7 +19,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="gcs_to_bq_green_mj_dag_v01",
+    dag_id="gcs_to_bq_green_mj_dag_v02",
     schedule_interval="@once",
     default_args=default_args,
     max_active_runs=1,
