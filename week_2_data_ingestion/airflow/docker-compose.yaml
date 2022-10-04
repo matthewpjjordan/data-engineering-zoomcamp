@@ -63,7 +63,7 @@ x-airflow-common:
 
     # TODO: Please change GCP_PROJECT_ID & GCP_GCS_BUCKET, as per your config
     GCP_PROJECT_ID: 'de-zoomcamp-360309'
-    GCP_GCS_BUCKET: 'transfer_service_zoomcamp'
+    GCP_GCS_BUCKET: 'dtc_data_lake_de-zoomcamp-360308'
     GCP_LOCATION: 'europe-west1'
 
 
