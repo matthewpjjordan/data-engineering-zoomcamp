@@ -19,7 +19,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="gcs_to_bq_yellow_mj_dag_v08",
+    dag_id="gcs_to_bq_yellow_mj_dag_v09",
     schedule_interval="@once",
     default_args=default_args,
     max_active_runs=1,
@@ -28,10 +28,10 @@ with DAG(
     gcs_refolder_task = GCSToGCSOperator(
         task_id='gcs_refolder_task',
         source_bucket=BUCKET,
-        source_object=f'trip data/yellow*',
+        source_object=f'raw/yellow*',
         destination_bucket=BUCKET,
         destination_object=f"yellow/yellow",
-        move_object=False,
+        move_object=True,
     )
 
     create_trip_data_dataset = BigQueryCreateEmptyDatasetOperator(

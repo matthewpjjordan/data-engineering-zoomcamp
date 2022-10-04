@@ -10,7 +10,6 @@ PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'trips_data_all')
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
-vehicles = ['yellow', 'green', 'fhv']
 
 default_args = {
     "owner": "airflow",
@@ -29,7 +28,7 @@ with DAG(
     gcs_refolder_task = GCSToGCSOperator(
         task_id='gcs_refolder_task',
         source_bucket=BUCKET,
-        source_object=f'trip data/green*',
+        source_object=f'raw/green*',
         destination_bucket=BUCKET,
         destination_object=f"green/green",
         move_object=False,
