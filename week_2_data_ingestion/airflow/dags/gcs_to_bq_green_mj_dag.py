@@ -5,10 +5,10 @@ from airflow.utils.dates import days_ago
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateExternalTableOperator, BigQueryInsertJobOperator, BigQueryCreateEmptyDatasetOperator
 from airflow.providers.google.cloud.transfers.gcs_to_gcs import GCSToGCSOperator
 
-LOCATION = os.environ.get("GCP_LOCATION", "europe-west1")
+LOCATION = os.environ.get("GCP_LOCATION", "us")
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
-BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'trips_data_all')
+BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'trips_data_all_us')
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 
 default_args = {
@@ -19,7 +19,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="gcs_to_bq_green_mj_dag_v02",
+    dag_id="gcs_to_bq_green_mj_dag_v04",
     schedule_interval="@once",
     default_args=default_args,
     max_active_runs=1,

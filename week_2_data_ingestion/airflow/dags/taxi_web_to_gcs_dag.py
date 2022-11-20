@@ -125,8 +125,8 @@ default_args = {
 yellow_dataset_file = "yellow_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.parquet"
 yellow_dataset_url = f"https://d37ci6vzurychx.cloudfront.net/trip-data/{yellow_dataset_file}"
 
-yellow_taxi_homework_dag_v07 = DAG(
-    dag_id="yellow_taxi_homework_dag_v07",
+yellow_taxi_homework_dag_v08 = DAG(
+    dag_id="yellow_taxi_homework_dag_v08",
     schedule_interval="@monthly",
     default_args=default_args,
     max_active_runs=3,
@@ -134,7 +134,7 @@ yellow_taxi_homework_dag_v07 = DAG(
 )
 
 download_upload_dag(
-    dag=yellow_taxi_homework_dag_v07,
+    dag=yellow_taxi_homework_dag_v08,
     dataset_file=yellow_dataset_file,
     url_template=yellow_dataset_url,
     path_to_local_home=path_to_local_home,
@@ -145,8 +145,8 @@ download_upload_dag(
 green_dataset_file = "green_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.parquet"
 green_dataset_url = f"https://d37ci6vzurychx.cloudfront.net/trip-data/{green_dataset_file}"
 
-green_taxi_homework_dag_v06 = DAG(
-    dag_id="green_taxi_homework_dag_v06",
+green_taxi_homework_dag_v08 = DAG(
+    dag_id="green_taxi_homework_dag_v08",
     schedule_interval="@monthly",
     default_args=default_args,
     max_active_runs=3,
@@ -154,7 +154,7 @@ green_taxi_homework_dag_v06 = DAG(
 )
 
 download_upload_dag(
-    dag=green_taxi_homework_dag_v06,
+    dag=green_taxi_homework_dag_v08,
     dataset_file=green_dataset_file,
     url_template=green_dataset_url,
     path_to_local_home=path_to_local_home,

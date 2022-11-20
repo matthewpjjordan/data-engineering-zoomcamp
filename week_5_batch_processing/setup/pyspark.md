@@ -33,8 +33,14 @@ Now let's run `ipython` (or `jupyter notebook`) and execute:
 
 ```python
 import pyspark
+# How to connect to the spark sessions
 from pyspark.sql import SparkSession
 
+# The type of connection.
+# Master coordinates clusters. 
+# Master is creates locally
+# * means all available CPUs
+# .getOrCreate() = If session exists get it, if not create it. 
 spark = SparkSession.builder \
     .master("local[*]") \
     .appName('test') \
